@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Flutter Demo",
+      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(95.0), // Customize the AppBar height
+        child: AppBar(
+          title: Text("NRR Application"),
+          flexibleSpace: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              SizedBox(height: 20.0), // Add space between AppBar top and text
+              Padding(
+                padding: EdgeInsets.only(right: 20.0), // Add right padding
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end, // Align text to the right
+                  children: <Widget>[
+                    Text("Name: ", style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text("Abhishek"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20.0), // Add right padding
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end, // Align text to the right
+                  children: <Widget>[
+                    Text("Roll No: ", style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text("033"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20.0), // Add right padding
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end, // Align text to the right
+                  children: <Widget>[
+                    Text("Semester: ", style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text("3rd Sem"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 20.0), // Add right padding
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end, // Align text to the right
+                  children: <Widget>[
+                    Text("Subject: ", style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text("MCA"),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+          ],
+        ),
+      ),
+    );
+  }
