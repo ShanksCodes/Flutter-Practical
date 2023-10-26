@@ -1,106 +1,24 @@
+//main.dart
 import 'package:flutter/material.dart';
+import 'homePage.dart'; // Import the HomePage widget
+import '../pastprograms/valid.dart';
+import 'invalid.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Login Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final nmController = TextEditingController();
-  final pwdController = TextEditingController();
-  String _usrAuth = '';
-
-  void _authenticateUser(String message) {
-    setState(() {
-      _usrAuth = message;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Login',
-              style: TextStyle(
-                color: Colors.blue,
-                fontWeight: FontWeight.w500,
-                fontSize: 30,
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: TextField(
-                controller: nmController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'User Name',
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: TextField(
-                controller: pwdController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
-                ),
-                obscureText: true, // Use a password field
-              ),
-            ),
-            Container(
-              height: 50,
-              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: ElevatedButton(
-                child: const Text('Login'),
-                onPressed: () {
-                  print(nmController.text);
-                  print(pwdController.text);
-                  if (nmController.text == 'a' && pwdController.text == 'b')
-                    _authenticateUser("Valid User");
-                  else
-                    _authenticateUser("Invalid User");
-                },
-              ),
-            ),
-            Text(
-              '$_usrAuth',
-              style: const TextStyle(
-                color: Colors.blue,
-                fontWeight: FontWeight.w500,
-                fontSize: 20,
-              ),
-            ),
-          ],
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/home', // Set the initial route
+      routes: {
+        '/home': (context) => homePage(),
+        '/valid': (context) => valid(),
+        '/invalid': (context) => invalid(),
+      },
     );
   }
 }
