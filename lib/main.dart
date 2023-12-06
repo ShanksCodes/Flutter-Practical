@@ -1,49 +1,65 @@
-import 'dart:math';
+// void main(){
+//   runApp(const GridApp());
+// }
+// class GridApp extends StatelessWidget{
+//   const GridApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context){
+//     return const MaterialApp(
+//       home: GridViewBuilderWidget(),
+//     );
+//   }
+// }
+
+/////////////////////////////////////////////////////////
+
+// main.dart
+// import 'package:flutter/material.dart';
+// import 'GridClassBuild.dart';
+//
+// void main() => runApp(GridApp());
+//
+// class GridApp extends StatelessWidget {
+//   const GridApp({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Image Grid'),
+//         ),
+//         body: GridViewBuilderWidget(),
+//       ),
+//     );
+//   }
+// }
+
+
+////////////////////////////////////////////////////////
+
+
+
+// main.dart
 import 'package:flutter/material.dart';
-import 'header.dart';
-import 'RowWidget.dart';
-import 'RowWithCardWidget.dart';
 
-void main(){
-  runApp(MyApp());
-}
+import 'GridClassBuild.dart';
 
-class MyApp extends StatelessWidget{
+void main() => runApp(GridApp());
+
+class GridApp extends StatelessWidget {
+  const GridApp({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Mca 3rd - Card Demo',
-      home: HomePage(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Image Grid'),
+        ),
+        body: GridViewBuilderWidget(),
+      ),
     );
   }
 }
-
-class HomePage extends StatefulWidget{
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage>{
-  @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('MCA 3rd sem List View Demo'),
-      ),
-      body: SafeArea(
-      child: ListView.Builder(
-      itemCount: 20,
-      itemBuilder: (BuildContext context, int index){
-        if(index==0){
-    return HeaderWidget(index:index);
-    }  else if(index>=1 && index<=3){
-    return RowWithCardWidget(index:index);
-    }
-        else
-          {
-            return RowWidget(index:index);
-          }
-
-    }
-    }
