@@ -1,6 +1,6 @@
 //invalid.dart
 import 'package:flutter/material.dart';
-import '../lib/homePage.dart';
+import 'homePage.dart';
 
 class invalid extends StatelessWidget {
   @override

@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage>{
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'Avinash 40',
+                      'Bond 007',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage>{
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'Avinash 40',
+                      'John Wick 066',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage>{
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'Avinash 40',
+                      'Malinga 033',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
